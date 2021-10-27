@@ -10,7 +10,7 @@ def do_something():
     print("something was done")
 
 event_01 = Event("You continue walking through the dark, dense forest and hear a distant, echoing voice. You feel compelled to follow the voice but your gut wrenches disapprovingly",
-    [["Trust gut", ""],
+    [["Trust gut", gameover],
     ["follow the voice", ""]])
 
 event_00 = Event("Good good, you're one step closer to learning the truth",
