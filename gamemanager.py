@@ -36,7 +36,11 @@ class Event():
     """
     Class used to create new events. Events take in a @text to be displayed when run, and a list of possible @next_events. List for next_events include the keyword to trigger the event, the event that will be triggered, and optionally a function that will run right before running the event. Use the optional function to extend functionality for adding resources, or starting a combat loop
     """
-    def __init__(self, text, next_events):
+    def __init__(self):
+        pass
+
+    
+    def create_event(self, text, next_events):
         self.text = text
         self.next_events = next_events
     
@@ -46,14 +50,13 @@ class Event():
             if (user_input.upper() == event[0].upper()):
                 command_found = True
                 
-                if(event[2]):
+                if(len(event)>=3):
                     if(callable(event[2])):
-                        print("Extra action to be taken")
+                        # print("Extra action to be taken")
                         event[2]()
                     else:
                         event[2].run()
-                else:
-                    print("NO extra action to be taken")
+                
                 
                 event[1].run()
                 
@@ -89,7 +92,7 @@ class Combat():
             self.enemy.take_damage(self.player.calculate_damage_points())
             
             print("")
-            
+        time.sleep(self.combat_delay_seconds/2)
         print(f"You slayed the {self.enemy.name}!")
         time.sleep(self.combat_delay_seconds)
 
