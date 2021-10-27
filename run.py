@@ -1,16 +1,15 @@
-from gamemanager import Event, Combat, Enemy, player
+from gamemanager import *
 
-
+player = Player(0, "sword", 100)
 
 rat = Enemy("rat", 10, 2)
-        
-rat_combat = Combat(rat)
+rat_combat = Combat(rat, player)
 
 
 def do_something():
     print("something was done")
 
-event_01 = Event("You continue walking through the dark, dense forest and you hear a distant echoing voice. You feel compelled to follow the voice but your gut wrenches disapprovingly",
+event_01 = Event("You continue walking through the dark, dense forest and hear a distant, echoing voice. You feel compelled to follow the voice but your gut wrenches disapprovingly",
     [["Trust gut", ""],
     ["follow the voice", ""]])
 

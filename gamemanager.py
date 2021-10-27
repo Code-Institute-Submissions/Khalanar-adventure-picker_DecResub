@@ -1,9 +1,12 @@
 import time
 import random
 
+def gameover():
+    print ("Game Over")
+
 class Player():
     """
-    
+    Class use to create the Player object
     """
     def __init__(self, gold, weapon, hitpoints):
         self.gold = gold
@@ -11,7 +14,7 @@ class Player():
         self.hitpoints = hitpoints
         
     def calculate_damage_points(self):
-        damage = random.randrange(0, 4)
+        damage = random.randrange(1, 4)
         return damage
         
     def spend_gold(self, amount):
@@ -25,13 +28,9 @@ class Player():
         print(f"You take {damage_taken}p of damage ({self.hitpoints} left)")
         
         if (self.hitpoints <= 0):
-            self.gameover()
+            gameover()
         
-    def gameover(self):
-        print("GAME OVER")
-        
-        
-player = Player(0, "sword", 100)
+
     
 class Event():
     """
@@ -44,7 +43,7 @@ class Event():
     def _evaluate_next_event(self, user_input):
         command_found = False
         for event in self.next_events:
-            if (user_input == event[0]):
+            if (user_input.upper() == event[0].upper()):
                 command_found = True
                 
                 if(event[2]):
@@ -75,20 +74,24 @@ class Combat():
     """
     Event used to create combat scenarios
     """
-    def __init__(self, enemy):
+    def __init__(self, enemy, player):
         self.enemy = enemy
-        print(f"You are facing a mighty {self.enemy.name}")
+        self.player = player
         self.combat_delay_seconds = 2
     
     def run(self):
+        print(f"\nYou attack the {self.enemy.name}!")
         while self.enemy.hitpoints > 0:
-            player.take_damage(self.enemy.damage)
             time.sleep(self.combat_delay_seconds)
+            self.player.take_damage(self.enemy.damage)
+
+            time.sleep(self.combat_delay_seconds)
+            self.enemy.take_damage(self.player.calculate_damage_points())
             
-            self.enemy.take_damage(player.calculate_damage_points())
-            time.sleep(self.combat_delay_seconds)
             print("")
-        print(f"{self.enemy.name} is dead!")
+            
+        print(f"You slayed the {self.enemy.name}!")
+        time.sleep(self.combat_delay_seconds)
 
 class Enemy():
     """
@@ -103,3 +106,5 @@ class Enemy():
         self.hitpoints -= damage_taken
         self.hitpoints = 0 if self.hitpoints < 0 else self.hitpoints
         print(f"{self.name} takes {damage_taken}p of damage ({self.hitpoints} left)")
+        
+        
