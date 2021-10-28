@@ -86,10 +86,10 @@ class Combat():
         print(f"\nYou attack the {self.enemy.name}!")
         while self.enemy.hitpoints > 0:
             time.sleep(self.combat_delay_seconds)
-            self.player.take_damage(self.enemy.damage)
-
-            time.sleep(self.combat_delay_seconds)
             self.enemy.take_damage(self.player.calculate_damage_points())
+            
+            time.sleep(self.combat_delay_seconds)
+            self.player.take_damage(self.enemy.damage)
             
             print("")
         time.sleep(self.combat_delay_seconds/2)
