@@ -2,7 +2,7 @@ import time
 import random
 
 def gameover():
-    print ("Game Over")
+    print ("\n**GAME OVER**")
 
 class Player():
     """
@@ -68,7 +68,7 @@ class Event():
         print(f"\n>>{self.text}")
         input_options = [event[0] for event in self.next_events]
         action_string = " | ".join([str(option) for option in input_options])
-        print(f"What will you do? (type one of the following options):")
+        print(f"\nWhat will you do? (type one of the following options):")
         user_input = input(f"{action_string}\n")
         
         self._evaluate_next_event(user_input)
