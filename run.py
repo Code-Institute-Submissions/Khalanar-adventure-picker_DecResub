@@ -26,6 +26,7 @@ event_04 = Event()
 event_05 = Event()
 event_06 = Event()
 trust_gut_gameover = Event()
+approach_bushes_gameover = Event()
 
 
 game_start.create_event(
@@ -34,10 +35,10 @@ game_start.create_event(
     ["Unsheath sword", event_01]])
     
 event_00.create_event(f"You reach out to your coin purse but it's not in your belt. At least nowhere to be found. You start to panic but realize you're wearing it to the right of your belt instead of the left. Odd, you have always worn it in your left side. There's {player.gold} coins in it. You don't remember how much you had left, or when was the last time you actually used it.",
-    [["Unsheath sword", "", event_01],
-    ["Quit", sys.exit]])
+    [["Unsheath sword", event_01],
+    ["Stand up", event_04]])
 
-event_01.create_event("You reach out to your sword but can't unsheathe it. It feels stuck. Upon closer inspection you realise it's not all the way in. You pull harder and manage to unsheath your steel completely covered in dried-out blood, so thick that you think it might have been responsible for getting the sword stuck in your prime leather sheath. While you lament the moment you ever put your dirty sword away you hear some leaves rambling in the bushes to your left.",
+event_01.create_event("You reach out to your sword but can't unsheathe it. It feels stuck. Upon closer inspection you realise it's not all the way in. You pull harder and manage to unsheath your steel, completely covered in dried-out blood so thick that you think it might have been responsible for ruining your prime-leather scabbard. While you lament the moment you ever put your sword away before cleaning it, the bushes to your left start rustling.",
     [["Check bushes",event_02],
     ["Hide", ""]])
 
@@ -47,8 +48,16 @@ event_02.create_event("Your brain tells you your sword will be practically usele
     
 
 event_03.create_event("You continue walking through the dark, dense forest and hear a distant, echoing voice. You feel compelled to follow the voice but your gut wrenches, disapprovingly.",
-    [["Trust gut",trust_gut_gameover, gameover],
+    [["Trust gut", gameover, trust_gut_gameover],
     ["follow the voice", ""]])
+
+event_04.create_event("You stand up, you feel dizzy. You're unsure if for the lack of food or lack of sleep, but it's certainly a feeling you are not used to. Before you can even make sense to whatever is going on with, your gut insticts activate, there is something odd about the bushes next to you.",
+    [["Approach",approach_bushes_gameover],
+    ["Unsheath sword", event_01]])
+
+approach_bushes_gameover.create_event("You approach the bushes, head-in, unprepared, and start to regret your boldness. As you reflect on other terrible decisions of your past and how everything turned out just fine in the end, a vicious red-eyed rat jumps through the bushes and latches onto your neck. If only you had been more cautious and readied your sword. You try get the rat out of your neck, but its fangs are so deep into your neck that with every pull you're just helping the rat rip through your throat even faster.\nYou die.\n\n**GAME OVER**",
+    [["Restart", game_start],
+    ["Exit", sys.exit]])
 
 trust_gut_gameover.create_event("Good good, you're one step closer to learning the truth",
     [["Option1", ""],
