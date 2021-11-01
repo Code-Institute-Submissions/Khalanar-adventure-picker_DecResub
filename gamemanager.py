@@ -30,7 +30,6 @@ class Player():
         if (self.hitpoints <= 0):
             gameover()
         
-
     
 class Event():
     """
@@ -39,7 +38,6 @@ class Event():
     def __init__(self):
         pass
 
-    
     def create_event(self, text, next_events):
         self.text = text
         self.next_events = next_events
