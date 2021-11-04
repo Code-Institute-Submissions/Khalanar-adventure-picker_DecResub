@@ -7,26 +7,54 @@ player = Player(3, "sword", 100)
 
 # Declare all enemy types
 rat = Enemy("rat", 6, 2)
+necromancer = Enemy("necromancer", 10, 3)
 
 # Declare all combat events
 rat_combat = Combat(rat, player)
-
+necromancer_combat = Combat(necromancer, player)
 
 def do_something():
     print("something was done")
 
 
 # Declare all events as empty so they can be referenced no matter when they have their values assigned
-game_start = Event()
-check_wallet = Event()
-unsheath_sword = Event()
-approach_bush = Event()
-stand_up = Event()
-event_04 = Event()
-event_05 = Event()
-event_06 = Event()
-trust_gut_gameover = Event()
-approach_bushes_gameover = Event()
+game_start      = Event()                # check_wallet | unsheath_sword
+check_wallet    = Event()              # stand_up run_from_bushes
+unsheath_sword  = Event()            #
+approach_bush   = Event()             #
+dead_rat        = Event()
+run_from_bushes = Event()           #
+reach_town      = Event()                #
+go_to_river     = Event()               #
+fight_boar      = Event()                #
+wounded_boar    = Event()
+heal_boar       = Event()                 #
+spare_boar      = Event()                #
+stand_up        = Event()                  #
+follow_voice    = Event()              #
+inspect_corpse  = Event()            #
+carry_corpse    = Event()              #
+agree_necro     = Event()               #
+disagree_necro  = Event()            #
+follow_chants   = Event()             #
+ignore_chants   = Event()             #
+help_execution  = Event()     #
+steal_crowd     = Event()               #
+
+
+# Game Over events
+trust_gut_gameover = Event()        #
+approach_bushes_gameover = Event()  #
+
+# Game End Events
+bard_intro = Event()                #
+demonslayer_intro = Event()         #
+necromancer_intro = Event()         #
+paladin_intro = Event()             #
+mage_intro = Event()                #
+hunter_intro = Event()              #
+executioner_intro = Event()         #
+rogue_intro = Event()               #
 
 
 game_start.create_event(
@@ -46,16 +74,16 @@ unsheath_sword.create_event(
 
 approach_bush.create_event(
     "Your brain tells you your sword will be practically useless in this state but your heart is pumping with anticipation. As you approach the bushes, a rat comes out. It's not a normal rat. There is something vicious about the way it looks at you. Like an animal without any self-preservation insticts, like an animal taken away by something dark that you can't begin to comprehend",
-    [["Attack", event_03, rat_combat],
+    [["Attack", dead_rat, rat_combat],
     ["run", ""]])
     
 
 stand_up.create_event(
     "You stand up, you feel dizzy. You're unsure if for the lack of food or lack of sleep, but it's certainly a feeling you are not used to. Before you can even make sense to whatever is going on with, your gut insticts activate, there is something odd about the bushes next to you.",
     [["Approach",approach_bushes_gameover],
-    ["Unsheath sword", event_01]])
+    ["Unsheath sword", unsheath_sword]])
 
-event_04.create_event(
+follow_chants.create_event(
     "You continue walking through the dark, dense forest and hear a distant, echoing voice. You feel compelled to follow the voice but your gut wrenches, disapprovingly.",
     [["Trust gut", gameover, trust_gut_gameover],
     ["follow the voice", ""]])
