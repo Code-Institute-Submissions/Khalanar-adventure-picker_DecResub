@@ -18,28 +18,28 @@ def do_something():
 
 
 # Declare all events as empty so they can be referenced no matter when they have their values assigned
-game_start      = Event()                # check_wallet | unsheath_sword
-check_wallet    = Event()              # stand_up run_from_bushes
-unsheath_sword  = Event()            #
-approach_bush   = Event()             #
-dead_rat        = Event()
-run_from_bushes = Event()           #
-reach_town      = Event()                #
-go_to_river     = Event()               #
-fight_boar      = Event()                #
-wounded_boar    = Event()
-heal_boar       = Event()                 #
-spare_boar      = Event()                #
-stand_up        = Event()                  #
-follow_voice    = Event()              #
-inspect_corpse  = Event()            #
-carry_corpse    = Event()              #
-agree_necro     = Event()               #
-disagree_necro  = Event()            #
-follow_chants   = Event()             #
-ignore_chants   = Event()             #
-help_execution  = Event()     #
-steal_crowd     = Event()               #
+game_start      = Event()  # check_wallet | unsheath_sword
+check_wallet    = Event()  # stand_up run_from_bushes
+unsheath_sword  = Event()  #
+approach_bush   = Event()  #
+dead_rat        = Event()  #
+run_from_bushes = Event()  #
+reach_town      = Event()  #
+go_to_river     = Event()  #
+fight_boar      = Event()  #
+wounded_boar    = Event()  #
+heal_boar       = Event()  #
+spare_boar      = Event()  #
+stand_up        = Event()  #
+follow_voice    = Event()  #
+inspect_corpse  = Event()  #
+carry_corpse    = Event()  #
+agree_necro     = Event()  #
+disagree_necro  = Event()  #
+follow_chants   = Event()  #
+ignore_chants   = Event()  #
+help_execution  = Event()  #
+steal_crowd     = Event()  #
 
 
 # Game Over events
