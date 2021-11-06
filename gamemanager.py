@@ -69,6 +69,7 @@ class Event():
         action_string = " | ".join([str(option) for option in input_options])
         print(f"\nWhat will you do? (type one of the following options):")
         user_input = input(f"{action_string}\n")
+        print("\n\n\n")
         
         self._evaluate_next_event(user_input)
         
