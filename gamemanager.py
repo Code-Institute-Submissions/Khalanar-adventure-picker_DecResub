@@ -1,18 +1,22 @@
 import time
 import random
+import events as e
 
 def gameover():
     print ("\n**GAME OVER**")
+    e.game_start.run()
 
 class Player():
     """
-    Class use to create the Player object
+    Class used to create the Player object
     """
+    # initialise player weapon is part of next version update
     def __init__(self, gold, weapon, hitpoints):
         self.gold = gold
         self.weapon = weapon
         self.hitpoints = hitpoints
-        
+    
+    # Calculates damage from given min and max points. Future version will include list of weapons and damage points
     def calculate_damage_points(self):
         damage = random.randrange(1, 4)
         return damage
