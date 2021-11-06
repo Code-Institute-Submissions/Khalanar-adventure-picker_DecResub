@@ -2,6 +2,8 @@ import time
 import random
 import events as e
 
+text_separator = f"***************\n"
+
 def gameover():
     print ("\n**GAME OVER**")
     e.game_start.run()
@@ -58,22 +60,22 @@ class Event():
                         # print("Extra action to be taken")
                         event[2]()
                     else:
-                        event[2].run()
+                        event[2].run(True)
                 
                 
-                event[1].run()
+                event[1].run(True)
                 
         if (not command_found):
-            print(f"\n-{user_input}- is not an option")
-            self.run()
+            print(f"{user_input} is not an option")
+            self.run(False)
     
-    def run(self):
-        print(f"\n>>{self.text}")
+    def run(self, show_text):
+        text = f"\n\n\n{text_separator}{self.text}\n***\n" if show_text else ""
+        print(text)
         input_options = [event[0] for event in self.next_events]
         action_string = " | ".join([str(option) for option in input_options])
-        print(f"\nWhat will you do? (type one of the following options):")
+        print(f"What will you do? (type one of the following options):")
         user_input = input(f"{action_string}\n")
-        print("\n\n\n")
         
         self._evaluate_next_event(user_input)
         

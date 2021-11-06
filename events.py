@@ -16,7 +16,6 @@ necromancer_combat  = Combat(necromancer, player)
 boar_combat         = Combat(boar, player)
 
 # Declare all events as empty so they can be referenced no matter when they have their values assigned
-
 game_start      = Event()  # check_wallet | unsheath_sword
 check_wallet    = Event()  # stand_up run_from_bushes
 unsheath_sword  = Event()  #
