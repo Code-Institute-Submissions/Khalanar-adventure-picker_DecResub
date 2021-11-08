@@ -6,48 +6,48 @@ from gamemanager import *
 player = Player(3, "sword", 100)
 
 # Declare all enemy types
-rat         = Enemy("rat", 5, 100)
+rat = Enemy("rat", 5, 2)
 necromancer = Enemy("necromancer", 10, 3)
-boar        = Enemy("boar", 6, 3)
+boar = Enemy("boar", 6, 3)
 
 # Declare all combat events
-rat_combat          = Combat(rat, player)
-necromancer_combat  = Combat(necromancer, player)
-boar_combat         = Combat(boar, player)
+rat_combat = Combat(rat, player)
+necromancer_combat = Combat(necromancer, player)
+boar_combat = Combat(boar, player)
 
-# Declare all events as empty so they can be referenced no matter when they have their values assigned
-game_start      = Event()  # check_wallet | unsheath_sword
-check_wallet    = Event()  # stand_up run_from_bushes
-unsheath_sword  = Event()  #
-approach_bush   = Event()  #
-dead_rat        = Event()  #
+# Declare all events as empty so they can be referenced no
+# matter when they have their values assigned
+game_start = Event()  #
+check_wallet = Event()  #
+unsheath_sword = Event()  #
+approach_bush = Event()  #
+dead_rat = Event()  #
 run_from_bushes = Event()  #
-reach_town      = Event()  #
-go_to_river     = Event()  #
-wounded_boar    = Event()  #
-heal_boar       = Event()  #
-lay_hands       = Event()  #
-stand_up        = Event()  #
-inspect_corpse  = Event()  #
-carry_corpse    = Event()  #
-agree_necro     = Event()  #
-disagree_necro  = Event()  #
+reach_town = Event()  #
+go_to_river = Event()  #
+wounded_boar = Event()  #
+heal_boar = Event()  #
+lay_hands = Event()  #
+stand_up = Event()  #
+inspect_corpse = Event()  #
+carry_corpse = Event()  #
+agree_necro = Event()  #
+disagree_necro = Event()  #
 approach_lamias = Event()  #
-attack_lamias   = Event()  #
-help_execution  = Event()  #
-steal_crowd     = Event()  #
+attack_lamias = Event()  #
+help_execution = Event()  #
+steal_crowd = Event()  #
 
 # Special Game Over events
 approach_bushes_gameover = Event()  #
-trust_gut_gameover       = Event()  #
-restart_game             = Event()
-
+trust_gut_gameover = Event()  #
+restart_game = Event()
 
 game_start.create_event(
     "You wake up in the middle of a forest. You are not sure where you are. Judging by the amount of moss in the trees around you, somewhere in the middle of Spring in the northern hemisphere. You have no memories whatsoever of ever having come to this forest, and something about it unsettles your stomach\nYour trusty sword is firmly sheathed, which is a good sign, you have not been robbed. Or so you think.",
     [["Check coin purse", check_wallet],
      ["Unsheath sword", unsheath_sword]])
-    
+
 check_wallet.create_event(
     f"You reach out to your coin purse but it's not in your belt. At least nowhere to be found. You start to panic but realize you're wearing it to the right of your belt instead of the left. Odd, you have always worn it in your left side. There's {player.gold} coins in it. You don't remember how much you had left, or when was the last time you actually used it.",
     [["Unsheath sword", unsheath_sword],
@@ -55,7 +55,7 @@ check_wallet.create_event(
 
 unsheath_sword.create_event(
     "You reach out to your sword but can't unsheathe it. It feels stuck. Upon closer inspection you realise it's not all the way in. You pull harder and manage to unsheath your steel, completely covered in dried-out blood so thick that you think it might have been responsible for ruining your prime-leather scabbard. While you lament the moment you ever put your sword away before cleaning it, the bushes to your left start rustling.",
-    [["Check bushes",approach_bush],
+    [["Check bushes", approach_bush],
      ["run", run_from_bushes]])
 
 approach_bush.create_event(
@@ -66,13 +66,12 @@ approach_bush.create_event(
 dead_rat.create_event(
     "The rat lies dead. Its severed body now covered in blood and soil emits a hissing sound while thick blood comes out from the hole where the head used to be. You feel a strange urge to carry the animal's remains but at the same time it does not seem like a good idea. You are disgusted and at the same time atracted to the creature's oozing blood.",
     [["inspect corpse", inspect_corpse],
-     ["carry corpse"], carry_corpse])
+     ["carry corpse", carry_corpse]])
 
 run_from_bushes.create_event(
     "You feel something big is lurking behind the bushes. You can't explain what it is but it is certainly something bigger than the rat that from the bushes jumps at you. Something bigger in power, can it be controlling the frenzied animal? There is no time to think, your run.\n\nYou run as fast as you can for as long as you can. You run for so long that you forget what you were running from. Running itself becomes the objective in your mind, running itself and not escaping from that of which you are running from. This does not make much sense but you completely forgot what you were running from, only a deep sense of dread lingers in your heart.\n\nExhausted you reach a small lake and you can see some smoke coming off the other side of the lake, behind the trees. A town, and the bridge to cross to the other side is mere meters away! You thought of sleeping in a hay bed again warms your heart, but you are thirsty and kneel down at the shore to refill your water pelt.\n\nAs you kneel down you see a boar. A regular wild boar if it were not for its incredible size and white fur. It's looking at you, menacingly, as it scratches the soil with its hoof readying to charge.",
     [["Attack", wounded_boar, boar_combat],
      ["Run to bridge", reach_town]])
- 
 
 wounded_boar.create_event(
     "There is a spark of life left in the animal. You feel sorry for the poor thing and don't believe the attack was ill-intentioned, it was protecting its territory and you chose violence instead of de-escalating by slowly moving away. What came over you? You have some spare nuts which you can use to feed the boar and some bandages to heal the boar, but like a person who has received a calling from above, you start to feel a strange energy flowing through",
@@ -94,7 +93,6 @@ reach_town.create_event(
     [["Stop the show", help_execution],
      ["Steal", steal_crowd]])
 
-
 stand_up.create_event(
     "You stand up, you feel dizzy. You're unsure if for the lack of food or lack of sleep, but it's certainly a feeling you are not used to. Before you can even make sense to whatever is going on with you, your gut rumbles, there is something odd about the bushes next to you.",
     [["Approach",approach_bushes_gameover],
@@ -104,7 +102,7 @@ inspect_corpse.create_event(
     "You get closer to the rat's dead body. The rate at which the blood comes out of is down to a trickle and its slightly sweet arome fills the air. It's a strangely comforting smell however repulsive the image before you may be. You can't take this anymore, clean your sword against your pantalons and continue down a trail near you. Eventually you can the running waters of a stream. Judging by the pitch of the water moving through the rocks you can tell it's cold. Colder than what the biome in the area may suggest. This may be ice water trickling down from a nearby mountain. If there's snowpure water, there must be a town somewhere along the stream so you decide to follow it.\n\nAfter some hours down-stream, you can hear chanting. Beautiful chanting. After getting closer you realise these aren't human voices, it's lamias. These half-fish creatures are known to roam from town to town, stealing kids off their homes and devouring them. These are not figments of an overly cautious society telling tales to avoid their little ones to stray too far away. Lamias are real, and four of them are right in front of you, unsuspecting.",
     [["Approach Lamias", approach_lamias],
      ["Attack Lamias"], attack_lamias])
-     
+
 carry_corpse.create_event(
     "The thought of carrying this dead rat repulses you but at the same time you feel it's the right thing to do. You have to fight against your insticts to be able to even touch it. You grab the rat and shove it into your coin purse. You gag as you pull your hand from the purse. Why are you even doing this? It's almost as there is a second voice in your head pulling you into doing this. You are so disgusted by all this that thread closed the coin sack and continue down the small pathway.\n\nIt's getting dark and cold. The still warm cadaver is the only source of heat you have right now. As you think about making camp, you see a strange greenish light. You don't want to get closer but you haven't eaten in a day and the smell of cinnamon rolls draws you to the source.\n\nYou see an old man in dark robes with silver threading. As you accept the old man's request he starts talking to you about a source of inconmensurable power. By the way he speaks you can't avoid but thinking that all your recent actions have been in some way influenced by this man and the power he speaks of. Can this even be? You think you're going crazy.\n\nThe old man suggests you join him, in his quest for power in his quest for power there's space for a young apprentice.",
     [["Accept", agree_necro],
@@ -150,7 +148,7 @@ trust_gut_gameover.create_event(
     "Good good, you're one step closer to learning the truth",
     [["Restart", game_start],
     ["Exit", sys.exit]])
-    
+
 restart_game.create_event(
     "You died:",
     [["Restart", game_start],
