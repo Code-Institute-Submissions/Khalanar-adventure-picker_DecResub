@@ -42,7 +42,6 @@ class Event():
     Class used to create new events. Events take in a @text to be displayed when run, and a list of possible @next_events. List for next_events include the keyword to trigger the event, the event that will be triggered, and optionally a function that will run right before running the event. Use the optional function to extend functionality for adding resources, or starting a combat loop
     """
     def __init__(self):
-       
         pass
 
     def create_event(self, text, next_events):
@@ -54,15 +53,12 @@ class Event():
         for event in self.next_events:
             if (user_input.upper() == event[0].upper()):
                 command_found = True
-                
                 if(len(event)>=3):
                     if(callable(event[2])):
                         # print("Extra action to be taken")
                         event[2]()
                     else:
                         event[2].run(True)
-                
-                
                 event[1].run(True)
                 
         if (not command_found):
