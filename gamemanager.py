@@ -1,8 +1,7 @@
 import time
 import random
 import events as e
-
-text_separator = f"***************\n"
+import os
 
 
 def gameover():
@@ -74,7 +73,8 @@ class Event():
             self.run(False)
 
     def run(self, show_text=True):
-        text = f"\n\n\n{text_separator}{self.text}\n***\n" if show_text else ""
+        os.system('clear')
+        text = f"{self.text}\n\n" if show_text else ""
         print(text)
         inp_options = [event[0] for event in self.next_events]
         action_string = " | ".join([str(opt) for opt in inp_options])

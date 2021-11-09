@@ -1,4 +1,4 @@
-#Adventure Picker
+# Adventure Picker
 
 Adventure Picker is a lightweight game engine for *Choose your own adventure* type games.
 
