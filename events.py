@@ -61,7 +61,7 @@ unsheath_sword.create_event(
 approach_bush.create_event(
     "Your brain tells you your sword will be practically useless in this state but your heart is pumping with anticipation. As you approach the bushes, a rat comes out. It's not a normal rat. There is something vicious about the way it looks at you. Like an animal without any self-preservation insticts, like an animal taken away by something dark that you can't begin to comprehend",
     [["Attack", dead_rat, rat_combat],
-     ["run", ""]])
+     ["run", run_from_bushes]])
 
 dead_rat.create_event(
     "The rat lies dead. Its severed body now covered in blood and soil emits a hissing sound while thick blood comes out from the hole where the head used to be. You feel a strange urge to carry the animal's remains but at the same time it does not seem like a good idea. You are disgusted and at the same time atracted to the creature's oozing blood.",
@@ -101,7 +101,7 @@ stand_up.create_event(
 inspect_corpse.create_event(
     "You get closer to the rat's dead body. The rate at which the blood comes out of is down to a trickle and its slightly sweet arome fills the air. It's a strangely comforting smell however repulsive the image before you may be. You can't take this anymore, clean your sword against your pantalons and continue down a trail near you. Eventually you can the running waters of a stream. Judging by the pitch of the water moving through the rocks you can tell it's cold. Colder than what the biome in the area may suggest. This may be ice water trickling down from a nearby mountain. If there's snowpure water, there must be a town somewhere along the stream so you decide to follow it.\n\nAfter some hours down-stream, you can hear chanting. Beautiful chanting. After getting closer you realise these aren't human voices, it's lamias. These half-fish creatures are known to roam from town to town, stealing kids off their homes and devouring them. These are not figments of an overly cautious society telling tales to avoid their little ones to stray too far away. Lamias are real, and four of them are right in front of you, unsuspecting.",
     [["Approach Lamias", approach_lamias],
-     ["Attack Lamias"], attack_lamias])
+     ["Attack Lamias", attack_lamias]])
 
 carry_corpse.create_event(
     "The thought of carrying this dead rat repulses you but at the same time you feel it's the right thing to do. You have to fight against your insticts to be able to even touch it. You grab the rat and shove it into your coin purse. You gag as you pull your hand from the purse. Why are you even doing this? It's almost as there is a second voice in your head pulling you into doing this. You are so disgusted by all this that thread closed the coin sack and continue down the small pathway.\n\nIt's getting dark and cold. The still warm cadaver is the only source of heat you have right now. As you think about making camp, you see a strange greenish light. You don't want to get closer but you haven't eaten in a day and the smell of cinnamon rolls draws you to the source.\n\nYou see an old man in dark robes with silver threading. As you accept the old man's request he starts talking to you about a source of inconmensurable power. By the way he speaks you can't avoid but thinking that all your recent actions have been in some way influenced by this man and the power he speaks of. Can this even be? You think you're going crazy.\n\nThe old man suggests you join him, in his quest for power in his quest for power there's space for a young apprentice.",
