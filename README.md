@@ -2,38 +2,33 @@
 
 Adventure Picker is a lightweight game engine for *Choose your own adventure* type games.
 
+Players are set in a scenario in which they have to type their desired next action. This takes players to the next event. Currently there are two main types of events, Events and Combat. Some events lead to a direct death, others to combat and most tothe next event. Combat is turn based and player's damage is calculated at random. A GameOver alert appears the player dies in combat, prompting to restart the game or exit. If the enemy dies, the player continues to the next step in the adventure.
+
+The current version includes Chapter 1 of the story. After Chapter 1 the player will acquire a new class, based on his/her ingame choices. Classes will become important in next versions, each with a differentiated story and a signature skill to help in combat and provide additional dialogue options in some shared events.
 
 
-
-
-
-
-
-## Future Releas
-- More than one ship
-- User can choose grid size
-- Update user with their score
-- Play in a 2 player version
+## Future Release
+- Chapter 2 for each character class
+- Next version features
 
 ## Testing
-- Original errors when run through [PEP8 Results](assets/images/pep8-errors.png)
-- Code passed through the PEP8 linter with no issues [PEP8 Results](assets/images/clear-pep8.png)
- - Images for these results can be found in the assets/images folder
-- Given invalid inputs: string when a number is expected, out of bounds inputs.
-- Tested in GitPod terminal (local) and CodeInstitute Heroku Terminal
+- **gamemanager.py** PEP8 code passed successfully without errors
+- **events.py** acknowledged and ignored PEP8 code in regards to line length. Future realeases will import text from a json file to avoid writing the story directly in python
 
 ### Input Validation and Error-Checking
- - The player cannot guess coordinates outside of the board size (0-3)
- - Numbers are the input the board accepts, otherwise an error message is displayed
+- Player input is capitalised and checked against the capitalised next available events list
+- If the player's input does not match any of the options, it is prompted to try again
+
 
 ### Future Features
-- Add a Merchant
--
-- Create different classes with different skills
+- Main weapon can be changed, affecting min and max damage output values
+- Add a Merchant to buy and sell your main weapon
+- Character classes with signature skill
+- Event's text will be held in a separate json file for readability
 
 
 ## Bugs
--
+-No known issues at this time
 
 ## Deployment
 
