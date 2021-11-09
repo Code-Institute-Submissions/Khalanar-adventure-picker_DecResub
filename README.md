@@ -30,7 +30,7 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 
 
 ## Bugs
-- No known issues at this time
+- There is an issue when sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
 
 ## Deployment
 

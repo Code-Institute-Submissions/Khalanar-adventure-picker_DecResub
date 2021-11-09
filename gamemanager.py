@@ -74,6 +74,7 @@ class Event():
 
     def run(self, show_text=True):
         os.system('clear')
+        print("**********")
         text = f"{self.text}\n\n" if show_text else ""
         print(text)
         inp_options = [event[0] for event in self.next_events]
