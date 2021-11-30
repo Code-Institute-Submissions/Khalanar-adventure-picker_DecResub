@@ -4,8 +4,12 @@
 
 Adventure Picker is a CLI lightweight game engine for *Choose your own adventure* type games.
 
+<<<<<<< HEAD
 You can play the game [here](https://adventure-picker.herokuapp.com/)!!!
 
+=======
+You can play the game [here](https://adventure-picker.herokuapp.com/)
+>>>>>>> 83f4516d3b1ad29085742d24853a3c45d5ff5f3c
 
 Players are set in a scenario in which they have to type their desired next action. This takes players to the next event. Currently there are two main types of events, Events and Combat. Some events lead to a direct death, others to combat and most tothe next event. Combat is turn based and player's damage is calculated at random. A GameOver alert appears the player dies in combat, prompting to restart the game or exit. If the enemy dies, the player continues to the next step in the adventure.
 
