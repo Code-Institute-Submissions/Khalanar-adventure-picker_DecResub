@@ -4,23 +4,32 @@
 
 Adventure Picker is a CLI lightweight game engine for *Choose your own adventure* type games.
 
+You can play the game [here](https://adventure-picker.herokuapp.com/)!!!
+
+
 Players are set in a scenario in which they have to type their desired next action. This takes players to the next event. Currently there are two main types of events, Events and Combat. Some events lead to a direct death, others to combat and most tothe next event. Combat is turn based and player's damage is calculated at random. A GameOver alert appears the player dies in combat, prompting to restart the game or exit. If the enemy dies, the player continues to the next step in the adventure.
 
 The current version includes Chapter 1 of the story. After Chapter 1 the player will acquire a new class, based on his/her ingame choices. Classes will become important in next versions, each with a differentiated story and a signature skill to help in combat and provide additional dialogue options in some shared events.
 
 
-## Future Release
-- Chapter 2 for each character class
-- Next version features
+---
 
 ## Testing
-- **gamemanager.py** PEP8 code passed successfully without errors
-- **events.py** acknowledged and ignored PEP8 code in regards to line length. Future realeases will import text from a json file to avoid writing the story directly in python
+Testing completed at [PEP8 online](http://pep8online.com/)
+- **gamemanager.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
+- **events.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
+- **run.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
 
 ### Input Validation and Error-Checking
 - Player input is capitalised and checked against the capitalised next available events list
 - If the player's input does not match any of the options, it is prompted to try again
 
+---
+
+## WIP
+### Next Release Includes
+- Chapter 2 for each character class
+- Next version features
 
 ### Future Features
 - Main weapon can be changed, affecting min and max damage output values
@@ -28,6 +37,10 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 - Character classes with signature skill
 - Event's text will be held in a separate json file for readability
 
+---
+
+### Credits
+- No external code was used
 
 ## Bugs
 - There is an issue when sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
