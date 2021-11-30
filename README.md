@@ -28,9 +28,9 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 ## Testing
 ### PEP8 Validation
 Testing completed at [PEP8 online](http://pep8online.com/)
-- **gamemanager.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
-- **events.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
-- **run.py** No errors [gamemanager](/assets/images/gamemanager-pep8.png)
+- **gamemanager.py** No errors ![gamemanager](/assets/images/gamemanager-pep8.png)
+- **events.py** No errors ![events](/assets/images/events-pep8.png)
+- **run.py** No errors ![run](/assets/images/run-pep8.png)
 
 ### Input Validation and Error-Checking
 - Player input is capitalised and checked against the capitalised next available events list
