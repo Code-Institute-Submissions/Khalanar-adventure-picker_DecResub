@@ -4,12 +4,28 @@
 
 Adventure Picker is a CLI lightweight game engine for *Choose your own adventure* type games.
 
-You can play the game [here](https://adventure-picker.herokuapp.com/)!!!
+You can play the game [here](https://adventure-picker.herokuapp.com/)!
 
 Players are set in a scenario in which they have to type their desired next action. This takes players to the next event. Currently there are two main types of events, Events and Combat. Some events lead to a direct death, others to combat and most tothe next event. Combat is turn based and player's damage is calculated at random. A GameOver alert appears the player dies in combat, prompting to restart the game or exit. If the enemy dies, the player continues to the next step in the adventure.
 
 The current version includes Chapter 1 of the story. After Chapter 1 the player will acquire a new class, based on his/her ingame choices. Classes will become important in next versions, each with a differentiated story and a signature skill to help in combat and provide additional dialogue options in some shared events.
 
+
+## User Stories
+### UX
+- First Time Visitor Goals
+ - As a First Time Visitor, I want to understand how to play.
+ - As a First Time Visitor, I want to help rescue Zoflogh the alien.
+ - As a First Time Visitor, I want the game to save my progress.
+
+- Returning Visitor Goals
+ - As a Returning Visitor, I want the game load my last progress to continue helping Zoflogh
+ - As a Returning Visitor, I want to be able to reset the game to wipe out my progress
+ - As a Returning Visitor, I want to find Social Media links.
+
+- Design compromises
+ - At some stage during development I tested using a different kind of input. Players would type A or B to make their selection on how the story should continue.
+ - I decided to remove this feature and have players type the option they wanted, as this created a stronger sense of choice and connection to their choices.
 
 ## Testing
 ### PEP8 Validation
@@ -22,9 +38,11 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - Player input is capitalised and checked against the capitalised next available events list
 - If the player's input does not match any of the options, it is prompted to try again
 
+### Known Issues
+- There is an issue when sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
 
 
-## WIP
+## Releases
 ### Next Release Includes
 - Chapter 2 for each character class
 - Next version features
@@ -35,13 +53,8 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - Character classes with signature skill
 - Event's text will be held in a separate json file for readability
 
-
-
 ## Credits
 - No external code was used
-
-## Bugs
-- There is an issue when sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
 
 ## Deployment
 
