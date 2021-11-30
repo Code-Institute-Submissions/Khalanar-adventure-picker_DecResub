@@ -15,13 +15,11 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 ### UX
 - First Time Visitor Goals
     - As a First Time Visitor, I want to understand how to play.
-    - As a First Time Visitor, I want to help rescue Zoflogh the alien.
-    - As a First Time Visitor, I want the game to save my progress.
+    - As a First Time Visitor, I want to help unfold the story with my own choices.
+    - As a First Time Visitor, I want to feel invested in the story.
 
 - Returning Visitor Goals
-    - As a Returning Visitor, I want the game load my last progress to continue helping Zoflogh
-    - As a Returning Visitor, I want to be able to reset the game to wipe out my progress
-    - As a Returning Visitor, I want to find Social Media links.
+    - As a Returning Visitor, I want to explore other paths in the game.
 
 - Design compromises
     - At some stage during development I tested using a different kind of input. Players would type A or B to make their selection on how the story should continue.
