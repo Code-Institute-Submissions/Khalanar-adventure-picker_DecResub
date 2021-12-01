@@ -21,9 +21,9 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 - Returning Visitor Goals
     - As a Returning Visitor, I want to explore other paths in the game.
 
-- Design compromises
+- Design Compromises
     - At some stage during development I tested using a different kind of input. Players would type A or B to make their selection on how the story should continue.
-    - I decided to remove this feature and have players type the option they wanted, as this created a stronger sense of choice and connection to their choices.
+    - I decided to remove this feature and have players type the option they wanted, as this created in players a stronger sense of connection to their choices.
 
 ## Testing
 ### PEP8 Validation
@@ -50,6 +50,14 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - Add a Merchant to buy and sell your main weapon
 - Character classes with signature skill
 - Event's text will be held in a separate json file for readability
+
+## Technologies
+### Languages
+- [Python](https://www.python.org/)
+
+### Programs
+- [Caret](https://chrome.google.com/webstore/detail/caret/fljalecfjciodhpcledpamjachpmelml?hl=en) Text Editor for ChromeOS
+- [Terminal](https://chromeos.dev/en/productivity/terminal) Linux Terminal Emulator for ChromeOS
 
 ## Credits
 - No external code was used
