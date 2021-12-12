@@ -12,7 +12,7 @@ The current version includes Chapter 1 of the story. After Chapter 1 the player 
 
 
 ## User Stories
-### UX
+### UX and Game Design
 - First Time Visitor Goals
     - As a First Time Visitor, I want to understand how to play.
     - As a First Time Visitor, I want to help unfold the story with my own choices.
@@ -33,11 +33,11 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - **run.py** No errors ![run](/assets/images/run-pep8.png)
 
 ### Input Validation and Error-Checking
-- Player input is capitalised and checked against the capitalised next available events list
-- If the player's input does not match any of the options, it is prompted to try again
+- *Player input* is capitalised and checked against the capitalised *next available events* list
+- If the *Player input* does not match any of the available events, user is prompted to try again
 
 ### Known Issues
-- There is an issue when sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
+- There is an issue where sometimes the emulated CLI will not clear between events. It seems to happen at random and is not an issue in the Linux CLI
 
 
 ## Releases
@@ -45,13 +45,13 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - Chapter 2 for each character class
 - Next version features
 
-### Future Features
-- Main weapon can be changed, affecting min and max damage output values
+### Next Version Features
+- Main weapon can be changed, with min and max damage output values
 - Add a Merchant to buy and sell your main weapon
 - Character classes with signature skill
 - Event's text will be held in a separate json file for readability
 
-## Technologies
+## Technology
 ### Languages
 - [Python](https://www.python.org/)
 
@@ -60,6 +60,7 @@ Testing completed at [PEP8 online](http://pep8online.com/)
 - [Terminal](https://chromeos.dev/en/productivity/terminal) Linux Terminal Emulator for ChromeOS
 
 ## Credits
+- CI interactive web console
 - No external code was used
 
 ## Deployment
